@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
 //Post band and song
 app.post("/", async (req, res) => {
     try {
-      const response = await axios.get(api_url + req.body.artist + "/" + req.body.song);
+      const response = await axios.get(api_url + req.body.artist + "/" + req.body.title);
       const result = response.data;
       res.render("index.ejs", { data: result });
     } catch (error) {
