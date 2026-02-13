@@ -1,3 +1,10 @@
+.new-rocker-regular {
+  font-family: "New Rocker", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 body p{
     font-size:16px;
 }
@@ -6,9 +13,8 @@ main{
     background: #020024;
     background-image: url('../images/bg-songlyrics.jpg');
     background-size:cover;
-    height:100vh;
-    display: flex;
-    align-items: center;
+    min-height:100vh;
+    background-attachment: fixed;
 }
 
 .lyrics_container{
@@ -19,18 +25,19 @@ main{
     backdrop-filter: blur(10px); /* Adjust the pixel value for more or less blur */
     -webkit-backdrop-filter: blur(10px); /* For Safari support */
     border:0.5px solid #9858C7;
+    margin:3rem 0;
 }
 
-.lyrics_container p,
-.lyrics_container h1,
-.lyrics_container h2{
+.lyrics_container p{
     color:#fff;
+    white-space: pre-line;
 }
 
 .lyrics_container h1,
 .lyrics_container h2{
     margin-bottom:2rem;
     text-align: center;
+    color:#fff;
 }
 
 .lyrics_form input,
@@ -71,4 +78,18 @@ main{
 .lyrics_form button:hover{
     transform: scale(1.05);
     transition: transform 0.5s ease;
+}
+
+.lyrics_title{
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom:0;
+    text-transform: capitalize;
+}
+
+.lyrics_artist{
+    text-align: center;
+    font-weight: 500;
+    margin-bottom:1rem;
+    text-transform: capitalize;
 }

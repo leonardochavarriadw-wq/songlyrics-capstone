@@ -24,10 +24,20 @@ app.get("/", (req, res) => {
 
 //Post band and song
 app.post("/", async (req, res) => {
+
+    const artist = req.body.artist;
+    const title = req.body.title;
+
+    //const extraParagraph = "Paroles de la chanson " + title + " par " + artist;
+
     try {
-      const response = await axios.get(api_url + req.body.artist + "/" + req.body.title);
+      const response = await axios.get(api_url + artist + "/" + title);
       const result = response.data;
-      res.render("index.ejs", { data: result });
+      res.render("index.ejs", {
+        data: result,
+        artist: artist,
+        title: title,
+    });
     } catch (error) {
       console.error("Failed to make request:", error.message);
       res.render("index.ejs", {
