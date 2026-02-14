@@ -28,12 +28,12 @@ app.post("/", async (req, res) => {
     const artist = req.body.artist;
     const title = req.body.title;
 
-    const extraParagraph = "Paroles de la chanson " + title + " par " + artist + "<br>";
+//    const extraParagraph = /^.*(\r\n|\n)/, "";
 
     try {
       const response = await axios.get(api_url + artist + "/" + title);
       const result = response.data.lyrics;
-      const debuggedLyrics = result.replace(extraParagraph, "");
+      const debuggedLyrics = result.replace(/^.*(\r\n|\n)/, "");
       res.render("index.ejs", {
         data: debuggedLyrics,
         artist: artist,
