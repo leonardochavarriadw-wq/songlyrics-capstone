@@ -90,6 +90,6 @@ main{
 .lyrics_artist{
     text-align: center;
     font-weight: 500;
-    margin-bottom:1rem;
+    margin-bottom:0;
     text-transform: capitalize;
 }

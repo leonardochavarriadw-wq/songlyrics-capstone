@@ -33,11 +33,7 @@ app.post("/", async (req, res) => {
     try {
       const response = await axios.get(api_url + artist + "/" + title);
       const result = response.data.lyrics;
-      const debuggedLyrics = result
-        .replace(/\\r\\n|\\n/g, "\n")
-        .split("\n")
-        .slice(1)
-        .join("\n");
+      const debuggedLyrics = result.replace(/^.*\r?\n/, "");
       res.render("index.ejs", {
         data: debuggedLyrics,
         artist: artist,
