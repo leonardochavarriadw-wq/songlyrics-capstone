@@ -28,8 +28,6 @@ app.post("/", async (req, res) => {
     const artist = req.body.artist;
     const title = req.body.title;
 
-    //const extraParagraph = "Paroles de la chanson " + title + " par " + artist;
-
     try {
       const response = await axios.get(api_url + artist + "/" + title);
       const result = response.data;
